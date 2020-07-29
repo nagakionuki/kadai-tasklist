@@ -1,22 +1,26 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<label for="title">タイトル</label><br /><%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<label for="title">タイトル</label>
+<br /><%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:if test="${errors != null}">
     <div id="flush_error">
         入力内容にエラーがあります。<br />
         <c:forEach var="error" items="${errors}">
-            ・<c:out value="${error}" /><br />
+            ・<c:out value="${error}" />
+            <br />
         </c:forEach>
 
     </div>
 </c:if>
-<label for="title">タイトル</label>
-
 <input type="text" name="title" value="${task.title}" />
-<br /><br />
+<br />
+<br />
 
-<label for="content">メッセージ</label><br />
+<label for="content">タスク</label>
+<br />
 <input type="text" name="content" value="${task.content}" />
-<br /><br />
+<br />
+<br />
 
 <input type="hidden" name="_token" value="${_token}" />
 <button type="submit">投稿</button>

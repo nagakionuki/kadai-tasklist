@@ -1,10 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <c:import url="../layout/app.jsp">
     <c:param name="content">
         <c:choose>
             <c:when test="${tasks != null}">
                 <h2>id : ${tasks.id} のタスク編集ページ</h2>
+
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>タイトル</th>
+                            <td><c:out value="${tasks.title}" /></td>
+                        </tr>
+                        <tr>
+                            <th>タスク</th>
+                            <td><c:out value="${tasks.content}" /></td>
+                        </tr>
+                    </tbody>
+                </table>
 
                 <form method="POST" action="${pageContext.request.contextPath}/update">
                     <c:import url="_form.jsp" />

@@ -3,8 +3,8 @@
 <c:import url="../layout/app.jsp">
     <c:param name="content">
         <c:choose>
-            <c:when test="${task != null}">
-                <h2>id : ${task.id} のタスク編集ページ</h2>
+            <c:when test="${tasks != null}">
+                <h2>id : ${tasks.id} のタスク編集ページ</h2>
 
                 <form method="POST" action="${pageContext.request.contextPath}/update">
                     <c:import url="_form.jsp" />
@@ -25,6 +25,7 @@
             </c:when>
             <c:otherwise>
                 <h2>お探しのデータは見つかりませんでした。</h2>
+                <p><a href="${pageContext.request.contextPath}/index">一覧に戻る</a></p>
             </c:otherwise>
         </c:choose>
     </c:param>

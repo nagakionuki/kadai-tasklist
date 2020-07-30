@@ -7,19 +7,6 @@
             <c:when test="${tasks != null}">
                 <h2>id : ${tasks.id} のタスク編集ページ</h2>
 
-                <table>
-                    <tbody>
-                        <tr>
-                            <th>タイトル</th>
-                            <td><c:out value="${tasks.title}" /></td>
-                        </tr>
-                        <tr>
-                            <th>タスク</th>
-                            <td><c:out value="${tasks.content}" /></td>
-                        </tr>
-                    </tbody>
-                </table>
-
                 <form method="POST" action="${pageContext.request.contextPath}/update">
                     <c:import url="_form.jsp" />
                 </form>
